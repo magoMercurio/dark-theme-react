@@ -1,5 +1,7 @@
-import { useEffect } from "react";
-import { useState } from "react"
+import { useEffect, useState } from "react";
+
+import LightIcon from "../assets/icon/LigthIcon";
+import MoonIcon from "../assets/icon/MoonIcon";
 
 function ThemeChange() {
   const [theme, setTheme] = useState(() => {
@@ -23,10 +25,11 @@ function ThemeChange() {
 
   return (
     <>
-      <button className="bg-slate-200 px-4 py-2 rounded h-20 hover:bg-slate-300 dark:bg-slater-950"
+      <button className=" rounded-full w-7 h-7 hover:bg-blue-500 dark:hover:bg-red-500  flex items-center justify-center"
         onClick={handleChangeTheme}
-    >
-        Cambiar Tema 
+    >        
+      {theme === 'light' ? <LightIcon /> : <MoonIcon />}
+
       </button>
     </>
   )
